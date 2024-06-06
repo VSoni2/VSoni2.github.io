@@ -1,10 +1,15 @@
 <!-- 1: Title and Subtitle
 A strong H1 title and an H2 subtitle - Just like writing an article or a blog post, you need a great title and subtitle to attract search engines and humans. It doesn’t need to be the name of your project, but it does help if your title includes the name of the project. -->
-# VSoni2.github.io
+# A Study of Localization based on Quantized Received Signal Strength
 
 <!-- 2: Introduction and notes
 An intro paragraph focused on what the project does - Write an intro paragraph about what this project is, what it does, and how it’s used. This section is still for SEO purposes and for keeping it simple about the value your project provides to the user who is searching for it.-->
-## Intro Paragraph sample good that shows how to do the following:
+## Introduction
+This Thesis outlines the limitations of GPS in indoor environments and introduces alternative localization methods that leverage existing wireless transmissions. Key observations highlight the importance of resilient, passive, and energy-efficient localization methods that do not depend on GPS or other Global Navigation Satellite Systems (GNSS), especially in environments susceptible to signal interference or jamming.
+The thesis proposes using existing hardware and resources for localization to avoid the need for specialized equipment. This approach includes using pre-computed lookup tables for efficient and scalable localization, which can significantly reduce the computational demands on devices.
+The focus then shifts to the Quantized Received Signal Strength Indicator (RSSI)-based method for localization. This method simplifies the complex RSSI data into quantized formats that still retain essential information for effective localization. The feasibility of this approach is tested through various scenarios and challenges, including the noise inherent in RSSI measurements and the limitations of existing transceiver technology.
+Additionally, the thesis explores the k-Nearest Neighbor (k-NN) algorithms, which use RSSI data to determine location. This method is seen as advantageous due to its ability to adapt to the quantized RSSI data while maintaining reasonable accuracy and scalability.
+Overall, this sets the stage for a detailed exploration of innovative, cost-effective, and efficient localization techniques that circumvent the limitations of traditional GPS-based systems, focusing on indoor and GNSS-denied environments using existing technologies.
 
 * something 1
 * something 2
