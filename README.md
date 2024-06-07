@@ -25,7 +25,16 @@ This repository contains the materials related to the thesis "A Study of Localiz
 
 ## Abstract
 
-This thesis bridges localization techniques based on proximity information with those based on Received Signal Strength Indication (RSSI) information. By quantizing the RSSI values, it is possible to enable offline construction of lookup tables that map quantized RSSI to coordinates, allowing for passive localization and scalable simultaneous localization of many devices. The underlying localization algorithm is treated as a black box, and a search process is developed to determine the optimal quantization given a training data set. The evaluation uses a dataset of RSSI measurements in an environment with a vehicle placed at various positions to capture a dynamically changing environment.
+This thesis bridges localization techniques based on proximity information with those predicated on Received Signal Strength Indication (RSSI) data. By quantizing RSSI values, it facilitates the offline construction of lookup tables that map quantized RSSI to coordinates. This approach enables passive localization and scalable simultaneous localization of numerous devices. The underlying localization algorithm is treated as a black box, and a systematic search process is developed to determine the optimal quantization based on a training dataset. Evaluation is conducted using an RSSI measurement dataset collected in an environment with variable vehicle positions to simulate dynamic conditions.
+
+This thesis outlines the limitations of Global Positioning System (GPS) technology in indoor environments and introduces alternative localization methods that leverage existing wireless transmissions. Key observations underscore the importance of resilient, passive, and energy-efficient localization methods that do not rely on GPS or other Global Navigation Satellite Systems (GNSS), particularly in environments prone to signal interference or jamming.
+
+The proposed approach utilizes existing hardware and resources for localization, thus obviating the need for specialized equipment. This methodology includes the use of pre-computed lookup tables for efficient and scalable localization, significantly reducing computational demands on individual devices. The focus then shifts to a Quantized Received Signal Strength Indicator (RSSI)-based method for localization. This method simplifies complex RSSI data into quantized formats that retain essential information for effective localization.
+
+The feasibility of this approach is tested through various scenarios, addressing challenges such as the inherent noise in RSSI measurements and the limitations of current transceiver technology. Furthermore, the thesis explores the application of k-Nearest Neighbor (k-NN) algorithms, which utilize RSSI data to ascertain location. This method is advantageous due to its ability to adapt to quantized RSSI data while maintaining reasonable accuracy and scalability.
+
+Overall, this work sets the stage for a detailed exploration of innovative, cost-effective, and efficient localization techniques that circumvent the limitations of traditional GPS-based systems. It focuses on indoor and GNSS-denied environments, leveraging existing technologies to develop robust localization solutions.
+
 
 ## Contents
 
