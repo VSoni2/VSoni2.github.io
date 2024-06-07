@@ -1,19 +1,68 @@
 <!-- 1: Title and Subtitle
 A strong H1 title and an H2 subtitle - Just like writing an article or a blog post, you need a great title and subtitle to attract search engines and humans. It doesn’t need to be the name of your project, but it does help if your title includes the name of the project. -->
 # A Study of Localization based on Quantized Received Signal Strength
+This repository contains the materials related to the thesis "A Study of Localization based on Quantized Received Signal Strength" by Alan Yong, submitted in partial fulfillment of the requirements for the degree of Master of Science at the University of Alberta.
 
 <!-- 2: Introduction and notes
 An intro paragraph focused on what the project does - Write an intro paragraph about what this project is, what it does, and how it’s used. This section is still for SEO purposes and for keeping it simple about the value your project provides to the user who is searching for it.-->
-## Introduction
-This Thesis outlines the limitations of GPS in indoor environments and introduces alternative localization methods that leverage existing wireless transmissions. Key observations highlight the importance of resilient, passive, and energy-efficient localization methods that do not depend on GPS or other Global Navigation Satellite Systems (GNSS), especially in environments susceptible to signal interference or jamming.
-The thesis proposes using existing hardware and resources for localization to avoid the need for specialized equipment. This approach includes using pre-computed lookup tables for efficient and scalable localization, which can significantly reduce the computational demands on devices.
-The focus then shifts to the Quantized Received Signal Strength Indicator (RSSI)-based method for localization. This method simplifies the complex RSSI data into quantized formats that still retain essential information for effective localization. The feasibility of this approach is tested through various scenarios and challenges, including the noise inherent in RSSI measurements and the limitations of existing transceiver technology.
-Additionally, the thesis explores the k-Nearest Neighbor (k-NN) algorithms, which use RSSI data to determine location. This method is seen as advantageous due to its ability to adapt to the quantized RSSI data while maintaining reasonable accuracy and scalability.
-Overall, this sets the stage for a detailed exploration of innovative, cost-effective, and efficient localization techniques that circumvent the limitations of traditional GPS-based systems, focusing on indoor and GNSS-denied environments using existing technologies.
+## Abstract
+This thesis bridges localization techniques based on proximity information with those predicated on Received Signal Strength Indication (RSSI) data. By quantizing RSSI values, it facilitates the offline construction of lookup tables that map quantized RSSI to coordinates. This approach enables passive localization and scalable simultaneous localization of numerous devices. The underlying localization algorithm is treated as a black box, and a systematic search process is developed to determine the optimal quantization based on a training dataset. Evaluation is conducted using an RSSI measurement dataset collected in an environment with variable vehicle positions to simulate dynamic conditions.
 
-* something 1
-* something 2
-* something 3
+This thesis outlines the limitations of Global Positioning System (GPS) technology in indoor environments and introduces alternative localization methods that leverage existing wireless transmissions. Key observations underscore the importance of resilient, passive, and energy-efficient localization methods that do not rely on GPS or other Global Navigation Satellite Systems (GNSS), particularly in environments prone to signal interference or jamming.
+
+The proposed approach utilizes existing hardware and resources for localization, thus obviating the need for specialized equipment. This methodology includes the use of pre-computed lookup tables for efficient and scalable localization, significantly reducing computational demands on individual devices. The focus then shifts to a Quantized Received Signal Strength Indicator (RSSI)-based method for localization. This method simplifies complex RSSI data into quantized formats that retain essential information for effective localization.
+
+The feasibility of this approach is tested through various scenarios, addressing challenges such as the inherent noise in RSSI measurements and the limitations of current transceiver technology. Furthermore, the thesis explores the application of k-Nearest Neighbor (k-NN) algorithms, which utilize RSSI data to ascertain location. This method is advantageous due to its ability to adapt to quantized RSSI data while maintaining reasonable accuracy and scalability.
+
+Overall, this work sets the stage for a detailed exploration of innovative, cost-effective, and efficient localization techniques that circumvent the limitations of traditional GPS-based systems. It focuses on indoor and GNSS-denied environments, leveraging existing technologies to develop robust localization solutions.
+
+## Contents
+### 1. Introduction
+  * Passive GNNS-Denied Localization
+  * Localization Using Limited Resources
+  * Quantized RSSI-Based Localization
+  * The Family of k–NN Localization Schemes
+  * Thesis Structure and Contributions
+    
+2. Related Work
+   * Indoor Localization
+   * Localization Techniques
+   * Received Signal Strength (RSS)
+   * k-Nearest Neighbours (k-NN)
+   * RADAR
+   * LANDMARC
+   * LEMON
+   * The Complexity of k-NN Techniques
+   * Localization Coverage of k-NN Techniques
+   * RSS Quantization
+   * Pre-computed Quantization Intervals
+   * Data-driven Quantization
+   * Global vs. Local Quantization
+   * Applications of RSSI Quantization
+   * Optimization Techniques
+   * Genetic Algorithms (GAs)
+   * Tabu Search
+     
+  * Indoor Localization
+  * Localization Techniques
+  * Received Signal Strength (RSS)
+  * k-Nearest Neighbours (k-NN)
+  * RADAR
+  * LANDMARC
+  * LEMON
+  * The Complexity of k-NN Techniques
+  * Localization Coverage of k-NN Techniques
+  * RSS Quantization
+  * Pre-computed Quantization Intervals
+  * Data-driven Quantization
+  * Global vs. Local Quantization
+  * Applications of RSSI Quantization
+  * Optimization Techniques
+  * Genetic Algorithms (GAs)
+  * Tabu Search
+
+3. Datasets & Baseline results
+   *
 
 <!-- 3: Diagrams and Videos 
 Diagram (optional) - If necessary, add a diagram showing where this project fits and how it works. If it’s a CLI tool or a graphical tool, this would be a great opportunity to add an animated GIF of your project in action. Even better, adding a youtube video demo of your project to your README could be very beneficial to gaining more users.-->
