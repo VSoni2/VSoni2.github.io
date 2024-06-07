@@ -19,24 +19,7 @@ Contributor expectations - If you are looking for contributors, make sure you se
 <!-- 7: Known Issues 
 Known issues - I already talked about this README section above so I’ll keep it short. Make a brief list of known issues here so people don’t report bugs you already know about!-->
 
-# Quantized RSSI-Based Localization
-
-This repository contains the materials related to the thesis "A Study of Localization based on Quantized Received Signal Strength" by Alan Yong, submitted in partial fulfillment of the requirements for the degree of Master of Science at the University of Alberta.
-
-## Abstract
-
-This thesis bridges localization techniques based on proximity information with those predicated on Received Signal Strength Indication (RSSI) data. By quantizing RSSI values, it facilitates the offline construction of lookup tables that map quantized RSSI to coordinates. This approach enables passive localization and scalable simultaneous localization of numerous devices. The underlying localization algorithm is treated as a black box, and a systematic search process is developed to determine the optimal quantization based on a training dataset. Evaluation is conducted using an RSSI measurement dataset collected in an environment with variable vehicle positions to simulate dynamic conditions.
-
-This thesis outlines the limitations of Global Positioning System (GPS) technology in indoor environments and introduces alternative localization methods that leverage existing wireless transmissions. Key observations underscore the importance of resilient, passive, and energy-efficient localization methods that do not rely on GPS or other Global Navigation Satellite Systems (GNSS), particularly in environments prone to signal interference or jamming.
-
-The proposed approach utilizes existing hardware and resources for localization, thus obviating the need for specialized equipment. This methodology includes the use of pre-computed lookup tables for efficient and scalable localization, significantly reducing computational demands on individual devices. The focus then shifts to a Quantized Received Signal Strength Indicator (RSSI)-based method for localization. This method simplifies complex RSSI data into quantized formats that retain essential information for effective localization.
-
-The feasibility of this approach is tested through various scenarios, addressing challenges such as the inherent noise in RSSI measurements and the limitations of current transceiver technology. Furthermore, the thesis explores the application of k-Nearest Neighbor (k-NN) algorithms, which utilize RSSI data to ascertain location. This method is advantageous due to its ability to adapt to quantized RSSI data while maintaining reasonable accuracy and scalability.
-
-Overall, this work sets the stage for a detailed exploration of innovative, cost-effective, and efficient localization techniques that circumvent the limitations of traditional GPS-based systems. It focuses on indoor and GNSS-denied environments, leveraging existing technologies to develop robust localization solutions.
-
-
-## Contents
+<!-- ## Contents
 
 1. **Introduction**
     - Passive GNSS-Denied Localization
@@ -85,7 +68,49 @@ Overall, this work sets the stage for a detailed exploration of innovative, cost
 
 6. **Conclusions and Future Work**
     - Conclusions
-    - Future Work
+    - Future Work!-->
+
+# Quantized RSSI-Based Localization
+
+This repository contains the materials related to the thesis "A Study of Localization based on Quantized Received Signal Strength" by Alan Yong, submitted in partial fulfillment of the requirements for the degree of Master of Science at the University of Alberta.
+
+## Abstract
+
+This thesis bridges localization techniques based on proximity information with those predicated on Received Signal Strength Indication (RSSI) data. By quantizing RSSI values, it facilitates the offline construction of lookup tables that map quantized RSSI to coordinates. This approach enables passive localization and scalable simultaneous localization of numerous devices. The underlying localization algorithm is treated as a black box, and a systematic search process is developed to determine the optimal quantization based on a training dataset. Evaluation is conducted using an RSSI measurement dataset collected in an environment with variable vehicle positions to simulate dynamic conditions.
+
+This thesis outlines the limitations of Global Positioning System (GPS) technology in indoor environments and introduces alternative localization methods that leverage existing wireless transmissions. Key observations underscore the importance of resilient, passive, and energy-efficient localization methods that do not rely on GPS or other Global Navigation Satellite Systems (GNSS), particularly in environments prone to signal interference or jamming.
+
+The proposed approach utilizes existing hardware and resources for localization, thus obviating the need for specialized equipment. This methodology includes the use of pre-computed lookup tables for efficient and scalable localization, significantly reducing computational demands on individual devices. The focus then shifts to a Quantized Received Signal Strength Indicator (RSSI)-based method for localization. This method simplifies complex RSSI data into quantized formats that retain essential information for effective localization.
+
+The feasibility of this approach is tested through various scenarios, addressing challenges such as the inherent noise in RSSI measurements and the limitations of current transceiver technology. Furthermore, the thesis explores the application of k-Nearest Neighbor (k-NN) algorithms, which utilize RSSI data to ascertain location. This method is advantageous due to its ability to adapt to quantized RSSI data while maintaining reasonable accuracy and scalability.
+
+Overall, this work sets the stage for a detailed exploration of innovative, cost-effective, and efficient localization techniques that circumvent the limitations of traditional GPS-based systems. It focuses on indoor and GNSS-denied environments, leveraging existing technologies to develop robust localization solutions.
+
+## Key Diagrams
+
+### Coverage for Optimal Global 2-bit Quantization
+
+#### No Car Present
+![Coverage for optimal global 2-bit quantization (no car present)](images/figure_5_2.png)
+
+#### Car Present (Left)
+![Coverage for optimal global 2-bit quantization (car present left)](images/figure_5_3.png)
+
+### Coverage for Optimal Local 2-bit Quantization
+
+#### No Car Present
+![Coverage for optimal local 2-bit quantization (no car present)](images/figure_5_4.png)
+
+#### Car Present (Left)
+![Coverage for optimal local 2-bit quantization (car present left)](images/figure_5_5.png)
+
+### Localization Performance
+
+#### No Quantization, 1-bit Global/Local, and 2-bit Global/Local Quantization
+![Localization performance for no quantization, 1-bit global/local and 2-bit global/local quantization](images/figure_6_1.png)
+
+#### No Quantization, 3-bit Global/Local, and 4-bit Global/Local Quantization
+![Localization performance for no quantization, 3-bit global/local and 4-bit global/local quantization](images/figure_6_2.png)
 
 ## Datasets
 
