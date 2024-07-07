@@ -170,7 +170,8 @@ Use the following command format to run the program:
 - -i: Interaction threshold for TABU search
 
 ### Test Cases
-#### Test Case 1: No Quantization for RADAR (average)
+#### No Car:
+##### Test Case 1: No Quantization for RADAR (average)
 **Command:**
 ```bash
 ./main -p data/without_car/average_profile.csv -t data/without_car/tag.csv -k 4 -l RADAR -s NONE -q NONE
@@ -180,7 +181,7 @@ Use the following command format to run the program:
 - Mean error = 1.212161
 - Std dev = 0.449490
 
-#### Test Case 2: 1-bit Quantization for RADAR (average)
+##### Test Case 2: 1-bit Quantization for RADAR (average)
 ```bash
 ./main -p data/without_car/average_profile.csv -t data/without_car/tag.csv -k 4 -l RADAR -s SEQUENTIAL -q GLOBAL -b 1
 ```
@@ -189,7 +190,7 @@ Use the following command format to run the program:
 - Mean error = 1.25535
 - Std dev = 0.648617
 - Fitness = 0.500859
-#### Test Case 3: 2-bit Quantization for RADAR (average)
+##### Test Case 3: 2-bit Quantization for RADAR (average)
 **Command:**
 ```bash
 ./main -p data/without_car/average_profile.csv -t data/without_car/tag.csv -k 4 -l RADAR -s EGA -q LOCAL -b 3 -o 20 -g 1000
@@ -201,7 +202,7 @@ Use the following command format to run the program:
 - Std dev = 0.501792
 
 
-#### Test Case 4: No Quantization for LANDMARC (average)
+##### Test Case 4: No Quantization for LANDMARC (average)
 **Command:**
 ```bash
 ./main -p data/without_car/average_profile.csv -t data/without_car/tag.csv -k 4 -l LANDMARC -s NONE -q NONE
@@ -210,7 +211,7 @@ Use the following command format to run the program:
 - Fitness = 0.675249
 - Mean error = 1.109379
 - Std dev = 0.500214
-#### Test Case 5: 1-bit Quantization for LANDMARC (average)
+##### Test Case 5: 1-bit Quantization for LANDMARC (average)
 **Command:**
 ```bash
 ./main -p data/without_car/average_profile.csv -t data/without_car/tag.csv -k 4 -l LANDMARC -s SEQUENTIAL -q GLOBAL -b 1
@@ -221,7 +222,7 @@ Use the following command format to run the program:
 - Std dev = 0.77132
 - Fitness = 0.318724
 
-#### Test Case 6: 2-bit Quantization for LANDMARC (average)
+##### Test Case 6: 2-bit Quantization for LANDMARC (average)
 **Command:**
 ```bash 
 ./main -p data/without_car/average_profile.csv -t data/without_car/tag.csv -k 4 -l LANDMARC -s EGA -q LOCAL -b 3 -o 20 -g 1000
@@ -232,7 +233,7 @@ Use the following command format to run the program:
 - Mean error = 0.912574
 - Std dev = 0.472543
 
-#### Test Case 7: No Quantization (k=4) for LEMON (average)
+##### Test Case 7: No Quantization (k=4) for LEMON (average)
 **Command:**
 ```bash
 ./main -p data/without_car/average_profile.csv -t data/without_car/tag.csv -k 4 -l LEMON -s NONE -q NONE
@@ -242,7 +243,7 @@ Use the following command format to run the program:
 - Mean error = 1.134635
 - Std dev = 0.634653
 
-#### Test Case 8: 1-bit Quantization for LEMON (average)
+##### Test Case 8: 1-bit Quantization for LEMON (average)
 **Command:**
 ```bash
 ./main -p data/without_car/average_profile.csv -t data/without_car/tag.csv -k 4 -l LEMON -s SEQUENTIAL -q GLOBAL -b 1
@@ -253,7 +254,7 @@ Use the following command format to run the program:
 - Std dev = 0.974819
 - Fitness = 0.306774
 
-#### Test Case 9: 2-bit Quantization for LEMON (average)
+##### Test Case 9: 2-bit Quantization for LEMON (average)
 **Command:**
 ```bash
 ./main -p data/without_car/average_profile.csv -t data/without_car/tag.csv -k 4 -l LEMON -s EGA -q LOCAL -b 3 -o 20 -g 1000
@@ -264,7 +265,7 @@ Use the following command format to run the program:
 - Mean error = 0.953673
 - Std dev = 0.495941
 
-#### Test Case 10: 1-bit Quantization for RADAR (no average)
+##### Test Case 10: 1-bit Quantization for RADAR (no average)
 **Command:**
 ```bash
 ./main -p data/without_car/formatted_profile.csv -t data/without_car/tag.csv -k 55 -l RADAR -s SEQUENTIAL -q GLOBAL -b 1
@@ -275,7 +276,7 @@ Use the following command format to run the program:
 - Std dev = 0.589716
 - Fitness = 0.494056
 
-#### Test Case 11: 1-bit Quantization for LANDMARC (no average)
+##### Test Case 11: 1-bit Quantization for LANDMARC (no average)
 **Command:**
 ```bash
 ./main -p data/without_car/formatted_profile.csv -t data/without_car/tag.csv -k 55 -l LANDMARC -s SEQUENTIAL -q GLOBAL -b 1
@@ -286,7 +287,7 @@ Use the following command format to run the program:
 - Std dev = 0.615484
 - Fitness = 0.494846
 
-#### Test Case 12: 1-bit Quantization for LEMON (no average)
+##### Test Case 12: 1-bit Quantization for LEMON (no average)
 **Command:**
 ```bash
 ./main -p data/without_car/formatted_profile.csv -t data/without_car/tag.csv -k 110 -l LEMON -s SEQUENTIAL -q GLOBAL -b 1
