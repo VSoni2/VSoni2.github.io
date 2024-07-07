@@ -153,7 +153,9 @@ A list of all references cited in the thesis, including key papers and datasets 
 - Run the provided makefile script using `make` or `make all` to reproduce the quantization and localization results, and `make clean` to cleanup.
 ### Running the program
 Use the following command format to run the program:
-```./main -p <profile_file> -t <tag_file> -k <k_value> -l <local_algo> -s <search_algo> -q <quant_scheme> -b <num_bounds> -o <pop_size> -g <num_generations> -u <tabu_size> -i <interaction_threshold>```
+```bash 
+./main -p <profile_file> -t <tag_file> -k <k_value> -l <local_algo> -s <search_algo> -q <quant_scheme> -b <num_bounds> -o <pop_size> -g <num_generations> -u <tabu_size> -i <interaction_threshold>
+```
 #### Parameters:
 - -p: Path to the profile file (CSV)
 - -t: Path to the tag file (CSV)
@@ -161,14 +163,140 @@ Use the following command format to run the program:
 - -l: Localization algorithm (RADAR, LANDMARC, LEMON)
 - -s: Search algorithm (NONE, SEQUENTIAL, EGA, TABU)
 - -q: Quantization scheme (NONE, GLOBAL, LOCAL)
-- -b: Number of quantization bounds
+- -b: Number of quantization bits
 - -o: Population size for EGA
 - -g: Number of generations for EGA
 - -u: Tabu size for TABU search
 - -i: Interaction threshold for TABU search
 
 ### Test Cases
-- Wo
+#### Test Case 1: No Quantization for RADAR (average)
+**Command:**
+```bash
+./main -p data/without_car/average_profile.csv -t data/without_car/tag.csv -k 4 -l RADAR -s NONE -q NONE
+```
+**Expected Results:**
+- Fitness = 0.598310
+- Mean error = 1.212161
+- Std dev = 0.449490
+
+#### Test Case 2: 1-bit Quantization for RADAR (average)
+```bash
+./main -p data/without_car/average_profile.csv -t data/without_car/tag.csv -k 4 -l RADAR -s SEQUENTIAL -q GLOBAL -b 1
+```
+**Expected Results:**
+- Best bound = 122.7434
+- Mean error = 1.25535
+- Std dev = 0.648617
+- Fitness = 0.500859
+#### Test Case 3: 2-bit Quantization for RADAR (average)
+**Command:**
+```bash
+./main -p data/without_car/average_profile.csv -t data/without_car/tag.csv -k 4 -l RADAR -s EGA -q LOCAL -b 3 -o 20 -g 1000
+```
+**Expected Results:**
+- Bounds = 120.608611, 144.454388, 154.762978
+- Fitness = 0.842092
+- Mean error = 0.967328
+- Std dev = 0.501792
+
+
+#### Test Case 4: No Quantization for LANDMARC (average)
+**Command:**
+```bash
+./main -p data/without_car/average_profile.csv -t data/without_car/tag.csv -k 4 -l LANDMARC -s NONE -q NONE
+```
+**Expected Results:**
+- Fitness = 0.675249
+- Mean error = 1.109379
+- Std dev = 0.500214
+#### Test Case 5: 1-bit Quantization for LANDMARC (average)
+**Command:**
+```bash
+./main -p data/without_car/average_profile.csv -t data/without_car/tag.csv -k 4 -l LANDMARC -s SEQUENTIAL -q GLOBAL -b 1
+```
+**Expected Results:**
+- Best bound = 122.6962
+- Mean error = 1.594545
+- Std dev = 0.77132
+- Fitness = 0.318724
+
+#### Test Case 6: 2-bit Quantization for LANDMARC (average)
+**Command:**
+```bash 
+./main -p data/without_car/average_profile.csv -t data/without_car/tag.csv -k 4 -l LANDMARC -s EGA -q LOCAL -b 3 -o 20 -g 1000
+```
+**Expected Results:**
+- Bounds = 121.441505, 143.688740, 154.910135
+- Fitness = 0.946890
+- Mean error = 0.912574
+- Std dev = 0.472543
+
+#### Test Case 7: No Quantization (k=4) for LEMON (average)
+**Command:**
+```bash
+./main -p data/without_car/average_profile.csv -t data/without_car/tag.csv -k 4 -l LEMON -s NONE -q NONE
+```
+**Expected Results:**
+- Fitness = 0.591653
+- Mean error = 1.134635
+- Std dev = 0.634653
+
+#### Test Case 8: 1-bit Quantization for LEMON (average)
+**Command:**
+```bash
+./main -p data/without_car/average_profile.csv -t data/without_car/tag.csv -k 4 -l LEMON -s SEQUENTIAL -q GLOBAL -b 1
+```
+**Expected Results:**
+- Best bound = 123.2958
+- Mean error = 1.519689
+- Std dev = 0.974819
+- Fitness = 0.306774
+
+#### Test Case 9: 2-bit Quantization for LEMON (average)
+**Command:**
+```bash
+./main -p data/without_car/average_profile.csv -t data/without_car/tag.csv -k 4 -l LEMON -s EGA -q LOCAL -b 3 -o 20 -g 1000
+```
+**Expected Results:**
+- Bounds = 95.687733, 122.734673, 136.992391
+- Fitness = 0.865463
+- Mean error = 0.953673
+- Std dev = 0.495941
+
+#### Test Case 10: 1-bit Quantization for RADAR (no average)
+**Command:**
+```bash
+./main -p data/without_car/formatted_profile.csv -t data/without_car/tag.csv -k 55 -l RADAR -s SEQUENTIAL -q GLOBAL -b 1
+```
+**Expected Results:**
+- Best bound = 122.7434
+- Mean error = 1.29472
+- Std dev = 0.589716
+- Fitness = 0.494056
+
+#### Test Case 11: 1-bit Quantization for LANDMARC (no average)
+**Command:**
+```bash
+./main -p data/without_car/formatted_profile.csv -t data/without_car/tag.csv -k 55 -l LANDMARC -s SEQUENTIAL -q GLOBAL -b 1
+```
+**Expected Results:**
+- Best bound = 122.7434
+- Mean error = 1.281409
+- Std dev = 0.615484
+- Fitness = 0.494846
+
+#### Test Case 12: 1-bit Quantization for LEMON (no average)
+**Command:**
+```bash
+./main -p data/without_car/formatted_profile.csv -t data/without_car/tag.csv -k 110 -l LEMON -s SEQUENTIAL -q GLOBAL -b 1
+```
+**Expected Results:**
+- Best bound = 123.4841
+- Mean error = 1.393673
+- Std dev = 0.761273
+- Fitness = 0.396532
+
 
 ### Thesis
 - Refer to the thesis PDF for detailed explanations of the methodologies and detailed results.
