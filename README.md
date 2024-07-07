@@ -74,7 +74,7 @@ Known issues - I already talked about this README section above so I’ll keep i
 
 This repository contains the materials related to the thesis "A Study of Localization based on Quantized Received Signal Strength" by Alan Yong, submitted in partial fulfillment of the requirements for the degree of Master of Science at the University of Alberta.
 
-## Introduction
+## Abstract
 
 This thesis bridges localization techniques based on proximity information with those predicated on Received Signal Strength Indication (RSSI) data. By quantizing RSSI values, it facilitates the offline construction of lookup tables that map quantized RSSI to coordinates. This approach enables passive localization and scalable simultaneous localization of numerous devices. The underlying localization algorithm is treated as a black box, and a systematic search process is developed to determine the optimal quantization based on a training dataset. Evaluation is conducted using an RSSI measurement dataset collected in an environment with variable vehicle positions to simulate dynamic conditions.
 
@@ -145,8 +145,34 @@ A list of all references cited in the thesis, including key papers and datasets 
 
 ## How to Use This Repository
 
-1. Clone the repository: `git clone https://github.com/username/repository.git`
-2. Follow the instructions in the `datasets` folder to access and preprocess the datasets.
-3. Run the provided makefile script using `make` or `make all` to reproduce the quantization and localization results, and `make clean` to cleanup.
-4. Refer to the thesis PDF for detailed explanations of the methodologies and results.
+### Cloning
+- Clone the repository: `git clone https://github.com/username/repository.git`
+### Location
+- Follow the instructions in the `datasets` folder to access and preprocess the datasets.
+### Compilation 
+- Run the provided makefile script using `make` or `make all` to reproduce the quantization and localization results, and `make clean` to cleanup.
+### Running the program
+Use the following command format to run the program:
+``` ./main -p <profile_file> -t <tag_file> -k <k_value> -l <local_algo> -s <search_algo> -q <quant_scheme> -b <num_bounds> -o <pop_size> -g <num_generations> -u <tabu_size> -i <interaction_threshold>
+```
+#### Parameters:
+- -p: Path to the profile file (CSV)
+- -t: Path to the tag file (CSV)
+- -k: Value of k for k-NN
+- -l: Localization algorithm (RADAR, LANDMARC, LEMON)
+- -s: Search algorithm (NONE, SEQUENTIAL, EGA, TABU)
+- -q: Quantization scheme (NONE, GLOBAL, LOCAL)
+- -b: Number of quantization bounds
+- -o: Population size for EGA
+- -g: Number of generations for EGA
+- -u: Tabu size for TABU search
+- -i: Interaction threshold for TABU search
 
+### Test Cases
+- Wo
+
+### Thesis
+- Refer to the thesis PDF for detailed explanations of the methodologies and detailed results.
+
+
+Testing &#8203;:citation[oaicite:0]{index=0}&#8203;
