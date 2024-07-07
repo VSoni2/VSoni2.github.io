@@ -153,8 +153,7 @@ A list of all references cited in the thesis, including key papers and datasets 
 - Run the provided makefile script using `make` or `make all` to reproduce the quantization and localization results, and `make clean` to cleanup.
 ### Running the program
 Use the following command format to run the program:
-``` ./main -p <profile_file> -t <tag_file> -k <k_value> -l <local_algo> -s <search_algo> -q <quant_scheme> -b <num_bounds> -o <pop_size> -g <num_generations> -u <tabu_size> -i <interaction_threshold>
-```
+```./main -p <profile_file> -t <tag_file> -k <k_value> -l <local_algo> -s <search_algo> -q <quant_scheme> -b <num_bounds> -o <pop_size> -g <num_generations> -u <tabu_size> -i <interaction_threshold>```
 #### Parameters:
 - -p: Path to the profile file (CSV)
 - -t: Path to the tag file (CSV)
