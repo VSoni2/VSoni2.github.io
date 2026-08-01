@@ -1,4 +1,4 @@
-# vsoni2.github.io
+# Vishit Soni
 
 My personal portfolio, live at **[vsoni2.github.io](https://vsoni2.github.io)**
 
