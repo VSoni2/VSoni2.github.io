@@ -239,6 +239,75 @@
   }, { passive: true });
   onScroll();
 
+  /* ---------- copy email ---------- */
+  var copyBtn = document.getElementById("copyEmail");
+  if (copyBtn) {
+    var copyTimer = null;
+    copyBtn.addEventListener("click", function () {
+      var email = copyBtn.getAttribute("data-email");
+      function done(ok) {
+        copyBtn.textContent = ok ? "Copied \u2713" : email;
+        if (copyTimer) { clearTimeout(copyTimer); }
+        copyTimer = setTimeout(function () { copyBtn.textContent = "Copy email"; }, 2000);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(function () { done(true); }, function () { done(false); });
+      } else {
+        var ta = document.createElement("textarea");
+        ta.value = email; ta.style.position = "fixed"; ta.style.opacity = "0";
+        document.body.appendChild(ta); ta.select();
+        var ok = false;
+        try { ok = document.execCommand("copy"); } catch (e) {}
+        document.body.removeChild(ta);
+        done(ok);
+      }
+    });
+  }
+
+  /* ---------- contact form (FormSubmit AJAX) ---------- */
+  var cform = document.getElementById("cform");
+  if (cform) {
+    var sendBtn = document.getElementById("cf-send");
+    var note = document.getElementById("cf-note");
+    cform.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      if (cform.querySelector(".hp").value) { return; } /* bot */
+      if (!cform.checkValidity()) { cform.reportValidity(); return; }
+      var name = document.getElementById("cf-name").value.trim();
+      var email = document.getElementById("cf-email").value.trim();
+      var msg = document.getElementById("cf-msg").value.trim();
+      sendBtn.disabled = true;
+      sendBtn.textContent = "Sending\u2026";
+      note.className = "fnote mono";
+      note.textContent = "";
+      fetch("https://formsubmit.co/ajax/vishitsoni@gmail.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          message: msg,
+          _subject: "Portfolio message from " + name,
+          _template: "table",
+          _captcha: "false"
+        })
+      }).then(function (r) {
+        if (!r.ok) { throw new Error("bad status"); }
+        return r.json();
+      }).then(function () {
+        note.className = "fnote mono ok";
+        note.textContent = "Message sent \u2713 I'll get back to you soon.";
+        cform.reset();
+      }).catch(function () {
+        note.className = "fnote mono err";
+        note.textContent = "Couldn't send right now. Email me directly at vishitsoni@gmail.com";
+      }).finally(function () {
+        sendBtn.disabled = false;
+        sendBtn.textContent = "Send";
+      });
+    });
+  }
+
   /* ---------- card tilt ---------- */
   if (finePointer && !reduced) {
     document.querySelectorAll(".card").forEach(function (card) {

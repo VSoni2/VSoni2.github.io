@@ -106,6 +106,7 @@ a:hover{color:var(--acc2)}
   transition:background .22s,color .22s,box-shadow .22s,transform .22s;
 }
 .btn:hover{background:var(--acc);color:#041020;box-shadow:0 0 22px var(--glow);transform:translateY(-1px)}
+button.btn{background:transparent;cursor:pointer;-webkit-appearance:none;appearance:none}
 .btn.ghost{border-color:var(--line);color:var(--mut)}
 .btn.ghost:hover{border-color:var(--acc);color:var(--acc);background:transparent;box-shadow:none}
 .cue{position:absolute;bottom:1.6rem;left:50%;transform:translateX(-50%);z-index:2;font-family:var(--mono);font-size:.68rem;letter-spacing:.3em;color:var(--mut);opacity:.7;animation:sink 2.4s ease-in-out infinite}
@@ -203,6 +204,23 @@ h2.in::after{transform:scaleX(1)}
 .links{display:flex;flex-wrap:wrap;gap:1rem;align-items:center}
 .links .mono-link{font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;color:var(--mut);border-bottom:1px solid var(--line);padding-bottom:2px;transition:color .2s,border-color .2s}
 .links .mono-link:hover{color:var(--acc2);border-color:var(--acc)}
+
+/* ---------- contact form ---------- */
+.contact-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:2.6rem 3.5rem;align-items:start}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr}}
+.contact-grid .links{margin-top:1.8rem}
+.cform{display:grid;gap:1.1rem}
+.field{display:grid;gap:.4rem}
+.flabel{font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--acc)}
+.cform input,.cform textarea{background:rgba(10,19,34,.7);border:1px solid var(--line);border-radius:10px;padding:.8rem 1rem;color:var(--ink);font-family:var(--body);font-size:.95rem;width:100%;transition:border-color .2s,box-shadow .2s}
+.cform input::placeholder,.cform textarea::placeholder{color:rgba(147,167,196,.45)}
+.cform input:focus,.cform textarea:focus{outline:none;border-color:var(--acc);box-shadow:0 0 0 3px rgba(92,168,255,.15)}
+.cform textarea{resize:vertical;min-height:130px}
+.hp{position:absolute;left:-9999px;opacity:0;height:0;width:0}
+.cform .btn{justify-self:start}
+.fnote{font-size:.74rem;letter-spacing:.06em;min-height:1.2em;margin:0}
+.fnote.ok{color:var(--acc)}
+.fnote.err{color:#ff9d9d}
 
 footer{border-top:1px solid var(--line);padding:1.6rem 0 2rem;margin-top:3rem}
 footer .container{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:space-between;font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
