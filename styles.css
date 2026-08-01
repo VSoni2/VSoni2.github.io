@@ -92,6 +92,10 @@ a:hover{color:var(--acc2)}
   font-size:clamp(2.4rem,8.5vw,5.6rem);line-height:1.04;letter-spacing:.01em;
   margin-bottom:1.1rem;
 }
+.idrow{display:flex;align-items:center;gap:clamp(1rem,3vw,1.8rem);margin-bottom:1.1rem}
+.idrow h1{margin-bottom:0}
+.avatar{flex:none;width:clamp(86px,12vw,128px);height:clamp(86px,12vw,128px);border-radius:50%;overflow:hidden;border:2px solid var(--acc);box-shadow:0 0 0 6px rgba(92,168,255,.12),0 14px 34px -14px var(--glow);background:var(--bg2)}
+.avatar img{width:100%;height:100%;object-fit:cover;display:block}
 .lw{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
 .lt{display:inline-block;transform:translateY(115%);animation:lup .7s cubic-bezier(.22,.7,.3,1) forwards;animation-delay:calc(var(--i)*42ms)}
 @keyframes lup{to{transform:none}}
