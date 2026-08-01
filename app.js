@@ -292,13 +292,20 @@
           _captcha: "false"
         })
       }).then(function (r) {
-        if (!r.ok) { throw new Error("bad status"); }
-        return r.json();
-      }).then(function () {
-        note.className = "fnote mono ok";
-        note.textContent = "Message sent \u2713 I'll get back to you soon.";
-        cform.reset();
-      }).catch(function () {
+        return r.json().then(function (data) { return { ok: r.ok, data: data }; });
+      }).then(function (res) {
+        var s = res.data && res.data.success;
+        if (res.ok && (s === true || s === "true")) {
+          note.className = "fnote mono ok";
+          note.textContent = "Message sent \u2713 I'll get back to you soon.";
+          cform.reset();
+        } else {
+          console.warn("FormSubmit response:", res.data);
+          note.className = "fnote mono err";
+          note.textContent = "Couldn't send right now. Email me directly at vishitsoni@gmail.com";
+        }
+      }).catch(function (err) {
+        console.warn("Form send failed:", err);
         note.className = "fnote mono err";
         note.textContent = "Couldn't send right now. Email me directly at vishitsoni@gmail.com";
       }).finally(function () {
