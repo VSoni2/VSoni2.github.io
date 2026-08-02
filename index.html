@@ -37,13 +37,21 @@
 
 <div id="glowCur" aria-hidden="true"></div>
 
-<nav class="rail" aria-label="Sections">
-  <div class="fill" id="railFill"></div>
-  <a href="#about">About</a>
-  <a href="#skills">Skills</a>
-  <a href="#experience">Work</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
+<nav class="topnav" id="topnav" aria-label="Primary">
+  <div class="bar">
+    <a class="brand" href="#top" aria-label="Back to top">
+      <svg width="22" height="22" viewBox="0 0 64 64" fill="none" aria-hidden="true"><polyline points="8,40 18,40 18,24 30,24 30,40 40,40 46,28 52,36 56,32" stroke="#5CA8FF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>VISHIT SONI</span>
+    </a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Work</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+  <i class="tprog" id="topProg" aria-hidden="true"></i>
 </nav>
 
 <header class="hero" id="top">
@@ -235,7 +243,7 @@
         <div>
           <p class="reveal" style="--d:.12s">I'm looking for firmware and FPGA roles where the hardware is real and the constraints matter, anywhere in Canada or the USA. If that sounds like your team, reach out here and it lands straight in my inbox.</p>
           <div class="links reveal" style="--d:.18s">
-            <a class="btn" href="mailto:vishitsoni@gmail.com">vishitsoni@gmail.com</a>
+            <span class="email-txt mono">vishitsoni@gmail.com</span>
             <button class="btn ghost" id="copyEmail" type="button" data-email="vishitsoni@gmail.com">Copy email</button>
             <a class="mono-link" href="https://www.linkedin.com/in/vishit-soni-20a857235/" target="_blank" rel="noopener">LinkedIn ↗</a>
             <a class="mono-link" href="https://github.com/VSoni2" target="_blank" rel="noopener">GitHub ↗</a>

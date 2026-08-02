@@ -70,19 +70,24 @@ a:hover{color:var(--acc2)}
 }
 @media (pointer:fine){#glowCur.live{opacity:1}}
 
-/* ---------- left rail: signal bus nav ---------- */
-.rail{position:fixed;left:1.9rem;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;gap:1.6rem;z-index:20}
-.rail::before{content:"";position:absolute;left:5px;top:0;bottom:0;width:1px;background:var(--line)}
-.rail .fill{position:absolute;left:5px;top:0;width:1px;height:100%;background:var(--acc);transform-origin:top;transform:scaleY(0);box-shadow:0 0 8px var(--glow)}
-.rail a{position:relative;display:flex;align-items:center;gap:.7rem;font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);opacity:.55;transition:opacity .25s,color .25s}
-.rail a::before{content:"";width:11px;height:11px;border-radius:50%;border:1px solid var(--mut);background:var(--bg);transition:all .25s;flex:none}
-.rail a:hover{opacity:1}
-.rail a.on{color:var(--acc2);opacity:1}
-.rail a.on::before{border-color:var(--acc);background:var(--acc);box-shadow:0 0 10px var(--glow)}
-@media (max-width:1120px){.rail{display:none}}
+/* ---------- top nav ---------- */
+.topnav{position:fixed;top:0;left:0;right:0;z-index:30;transition:background .3s,border-color .3s}
+.topnav .bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;max-width:1160px;margin-inline:auto;padding:.85rem clamp(1.1rem,4vw,2rem)}
+.topnav.scrolled{background:rgba(5,8,15,.74);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:.6rem;font-family:var(--mono);font-size:.78rem;letter-spacing:.22em;color:var(--acc2)}
+.brand:hover{color:var(--acc2)}
+.brand svg{display:block;flex:none}
+.topnav ul{list-style:none;display:flex;gap:clamp(.9rem,2.4vw,1.6rem);margin:0;padding:0}
+.topnav ul a{display:inline-block;font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);padding:.35rem .05rem;position:relative;transition:color .25s}
+.topnav ul a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;border-radius:2px;background:var(--acc);transform:scaleX(0);transform-origin:left;transition:transform .3s cubic-bezier(.22,.7,.3,1)}
+.topnav ul a:hover{color:var(--acc2)}
+.topnav ul a.on{color:var(--acc2)}
+.topnav ul a.on::after{transform:scaleX(1)}
+.tprog{position:absolute;left:0;bottom:0;height:2px;width:100%;background:linear-gradient(90deg,var(--acc),var(--acc2));transform-origin:left;transform:scaleX(0);box-shadow:0 0 10px var(--glow)}
+@media (max-width:520px){.brand span{display:none}.topnav ul{gap:.85rem}.topnav ul a{font-size:.62rem;letter-spacing:.12em}}
 
 /* ---------- hero ---------- */
-.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden}
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;padding-top:3.2rem}
 #sig{position:absolute;inset:0;width:100%;height:100%;display:block}
 .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 30% 45%,transparent 25%,rgba(5,8,15,.72) 82%)}
 .hero-in{position:relative;z-index:2;width:100%}
@@ -95,7 +100,7 @@ a:hover{color:var(--acc2)}
 .idrow{display:flex;align-items:center;gap:clamp(1rem,3vw,1.8rem);margin-bottom:1.1rem}
 .idrow h1{margin-bottom:0}
 .avatar{flex:none;width:clamp(86px,12vw,128px);height:clamp(86px,12vw,128px);border-radius:50%;overflow:hidden;border:2px solid var(--acc);box-shadow:0 0 0 6px rgba(92,168,255,.12),0 14px 34px -14px var(--glow);background:var(--bg2)}
-.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.avatar img{width:100%;height:100%;object-fit:cover;object-position:50% 15%;display:block}
 .lw{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
 .lt{display:inline-block;transform:translateY(115%);animation:lup .7s cubic-bezier(.22,.7,.3,1) forwards;animation-delay:calc(var(--i)*42ms)}
 @keyframes lup{to{transform:none}}
@@ -206,6 +211,7 @@ h2.in::after{transform:scaleX(1)}
 .contact h2{font-size:clamp(1.9rem,5vw,3rem)}
 .contact p{max-width:40rem;margin-bottom:2rem}
 .links{display:flex;flex-wrap:wrap;gap:1rem;align-items:center}
+.email-txt{font-size:.85rem;letter-spacing:.04em;color:var(--acc2);user-select:all}
 .links .mono-link{font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;color:var(--mut);border-bottom:1px solid var(--line);padding-bottom:2px;transition:color .2s,border-color .2s}
 .links .mono-link:hover{color:var(--acc2);border-color:var(--acc)}
 
